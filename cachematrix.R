@@ -31,18 +31,19 @@ cacheSolve <- function(x, ...) {
 
 ## run if the inverse has already been calcuated
   if (!is.null(inv)){
-# retrieve from cache
+## retrieve from cache
   message("retrieving cache data")
   return(inv)
 }
 
-##if not calculated, proceed with calculating the inverse
+## if not calculated, proceed with calculating the inverse
  mat.data = x$get()
  inv = solve(mat.data, ...)
 
-# set the value of the inverse in the cache via the setinv function
+## set the value of the inverse in the cache via the setinv function
   x$setinv(inv)
 
   return(inv)
 }
+
 
